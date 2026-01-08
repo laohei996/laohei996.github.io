@@ -1,0 +1,65 @@
+title: laohei996
+tagline: this is my blog.
+description: >-
+  this is my blog.
+url: "https://laohei996.github.io" # Replace with your site's URL
+
+author:
+  name: LaoHei
+  email: example@email.com
+  url: https://github.com/laohei996
+
+# The syntax of your locale. The first part is the language code,
+# and the second part is the country code.
+lang: en-US
+
+# The timezone of your site.
+# See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai
+
+theme: jekyll-theme-chirpy
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+paginate: 10
+
+plugins:
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+
+# Chirpy Specific Settings
+avatar: /assets/img/avatar.png # You should add an avatar later
+social:
+  name: LaoHei
+  links:
+    - https://github.com/laohei996
+
+comment:
+  provider: utterances
+  utterances:
+    repo: laohei996/laohei996.github.io
+    issue_term: pathname

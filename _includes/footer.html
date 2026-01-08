@@ -1,0 +1,47 @@
+<!-- The Footer -->
+
+<footer aria-label="Site Info" class="text-muted py-4">
+  <div class="d-flex flex-column justify-content-center flex-lg-row justify-content-center align-items-lg-center gap-3">
+    <p>
+      {{- '©' }}
+      <time>{{ 'now' | date: '%Y' }}</time>
+
+      {% if site.social.links %}
+      <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+      {% else %}
+      <em class="fst-normal">{{ site.social.name }}</em>.
+      {% endif %}
+
+      {% if site.data.locales[include.lang].copyright.brief %}
+      <span data-bs-toggle="tooltip" data-bs-placement="top"
+        title="{{ site.data.locales[include.lang].copyright.verbose }}">
+        {{- site.data.locales[include.lang].copyright.brief -}}
+      </span>
+      {% endif %}
+    </p>
+
+    <p>
+      {%- capture _platform -%}
+      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+      {%- endcapture -%}
+
+      {%- capture _theme -%}
+      <a data-bs-toggle="tooltip" data-bs-placement="top" title="v{{ theme.version }}"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+      {%- endcapture -%}
+
+      {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
+    </p>
+
+    <div class="text-center small">
+      <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span>
+      </span>
+      <span id="busuanzi_container_site_uv" class="ms-3">
+        <i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </div>
+  </div>
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
